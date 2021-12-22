@@ -1,7 +1,26 @@
 import React from "react";
 
-export default function Navbar({ fixed }) {
+export default function Navbar({ selectedTab, setSelectedTab }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const menuItems = [
+      {
+          id:1,
+          label: 'About'
+      },
+      {
+          id:2,
+          label: 'Work'
+      },
+      {
+        id:3,
+        label: 'Contact Me'
+    },
+    {
+        id:4,
+        label: 'Resume'
+    }
+  ];
+  console.log(selectedTab)
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500 mb-3">
@@ -11,7 +30,7 @@ export default function Navbar({ fixed }) {
               className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
               href="#pablo"
             >
-              emerald Tailwind Starter Kit
+              Alexander Brandon
             </a>
             <button
               className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
@@ -29,30 +48,18 @@ export default function Navbar({ fixed }) {
             id="example-navbar-danger"
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
-                >
-                  <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Share</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
-                >
-                  <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Tweet</span>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
-                >
-                  <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i><span className="ml-2">Pin</span>
-                </a>
-              </li>
+                {
+                    menuItems.map(item => (
+                        <li className="nav-item" onClick={() => setSelectedTab(item.id)}>
+                        <a
+                          className={"px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" + (selectedTab === item.id ? ' text-white' : ' text-black')}
+                          href="#pablo"
+                        >
+                          <i className={"fab fa-facebook-square text-lg leading-lg opacity-75" + (selectedTab === item.id ? ' text-white' : ' text-black')}></i><span className="ml-2">{item.label}</span>
+                        </a>
+                      </li>
+                    ))
+                }
             </ul>
           </div>
         </div>

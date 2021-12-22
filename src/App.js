@@ -1,23 +1,26 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar.js';
 
 function App() {
+  const [selectedTab, setSelectedTab] = useState(1);
+  const renderCorrectTab = () => {
+    switch (selectedTab) {
+      case 1:
+        return <div>About</div>
+      case 2:
+        return <div>different</div>
+    default:
+
+    }
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar selectedTab={selectedTab}
+      setSelectedTab={setSelectedTab}
+      />
+      {renderCorrectTab()}
     </div>
   );
 }
