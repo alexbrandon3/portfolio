@@ -2,16 +2,24 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './components/Navbar.js';
+import About from './components/About.js';
+import Work from './components/Work.js';
+import Contact from './components/Contact.js';
+import Resume from './components/Resume.js';
+
 
 function App() {
-  const [selectedTab, setSelectedTab] = useState(1);
-  const renderCorrectTab = () => {
+  const [selectedTab, setSelectedTab] = useState('About');
+  const renderChosenTab = () => {
     switch (selectedTab) {
-      case 1:
-        return <div>About</div>
-      case 2:
-        return <div>different</div>
-    default:
+      case 'Work':
+        return <Work/>
+      case 'Contact Me':
+        return <Contact/>
+      case 'Resume':
+        return <Resume/>
+      default:
+        return <About/>
 
     }
   }
@@ -20,7 +28,7 @@ function App() {
       <Navbar selectedTab={selectedTab}
       setSelectedTab={setSelectedTab}
       />
-      {renderCorrectTab()}
+      {renderChosenTab()}
     </div>
   );
 }

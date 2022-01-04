@@ -15,12 +15,8 @@ export default function Navbar({ selectedTab, setSelectedTab }) {
         id:3,
         label: 'Contact Me'
     },
-    {
-        id:4,
-        label: 'Resume'
-    }
   ];
-  console.log(selectedTab)
+
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-emerald-500 mb-3">
@@ -50,16 +46,18 @@ export default function Navbar({ selectedTab, setSelectedTab }) {
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                 {
                     menuItems.map(item => (
-                        <li className="nav-item" onClick={() => setSelectedTab(item.id)}>
+                        <li className="nav-item" onClick={() => setSelectedTab(item.label)}>
                         <a
-                          className={"px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" + (selectedTab === item.id ? ' text-white' : ' text-black')}
+                          className={"px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75" + (selectedTab === item.label ? ' text-white' : ' text-black')}
                           href="#pablo"
                         >
-                          <i className={"fab fa-facebook-square text-lg leading-lg opacity-75" + (selectedTab === item.id ? ' text-white' : ' text-black')}></i><span className="ml-2">{item.label}</span>
+                          <i className={"fab fa-facebook-square text-lg leading-lg opacity-75" + (selectedTab === item.label ? ' text-white' : ' text-black')}></i><span className="ml-2">{item.label}</span>
                         </a>
                       </li>
                     ))
                 }
+                <li className="nav-item" ><a className={"px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75  text-black"} href="resume.pdf#sidebar=0" target='_blank'>Download Resume</a></li>
+                
             </ul>
           </div>
         </div>
