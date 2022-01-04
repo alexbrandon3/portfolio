@@ -51,7 +51,7 @@ export default function Work() {
       alt: "Weather",
     },
   ];
-
+//
   return (
     <div className="container mx auto flex place-content-center flex-wrap">
       {buttons.map((item) => (
