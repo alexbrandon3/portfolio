@@ -10,42 +10,42 @@ export default function Work() {
   const buttons = [
     {
       id: 1,
-      name: "fitness",
+      name: "Workout Tracker",
       href: "https://still-chamber-55192.herokuapp.com/?id=61b9271823b6fd00165104e2",
       src: Fitness,
       alt: "Fitness",
     },
     {
       id: 2,
-      name: "budget",
+      name: "Budget Tracker",
       href: "https://infinite-cove-15007.herokuapp.com/",
       src: Budget,
       alt: "Budget",
     },
     {
       id: 3,
-      name: "eCommerce",
+      name: "eCommerce Backend",
       href: "https://github.com/alexbrandon3/e-commerce_backend",
       src: ECommerce,
       alt: "eCommerce",
     },
     {
       id: 4,
-      name: "employee",
+      name: "Employee Tracker",
       href: "https://github.com/alexbrandon3/employee-tracker",
       src: Employee,
       alt: "Employees",
     },
     {
       id: 5,
-      name: "notes",
+      name: "Note Taker",
       href: "https://alex-brandon-note-taker.herokuapp.com/",
       src: Notes,
       alt: "Notes",
     },
     {
       id: 6,
-      name: "weather",
+      name: "Weather Dashboard",
       href: "https://alexbrandon3.github.io/weather-dashboard/",
       src: Weather,
       alt: "Weather",
@@ -56,7 +56,7 @@ export default function Work() {
     <div className="container mx auto flex place-content-center flex-wrap">
       {buttons.map((item) => (
         <div
-          className={`w-1/3 h-72 rounded m-2 hover:bg-gray-300 bg-cover bg-video z-50 items-center justify-center`}
+          className={`w-1/3 h-72 rounded m-2 hover:bg-gray-300 bg-cover bg-video z-50 items-center justify-center cursor-pointer`}
         >
           <div
             className={`w-1/3 h-72 rounded hover:bg-opacity-75 hover:bg-gray-300 bg-cover bg-video z-50 absolute flex my-auto`}
