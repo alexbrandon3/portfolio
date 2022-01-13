@@ -6,6 +6,7 @@ import About from './components/About.js';
 import Work from './components/Work.js';
 import Contact from './components/Contact.js';
 import Resume from './components/Resume.js';
+import Footer from './components/Footer.js';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       setSelectedTab={setSelectedTab}
       />
       {renderChosenTab()}
+      <Footer/>
     </div>
   );
 }
